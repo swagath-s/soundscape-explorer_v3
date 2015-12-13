@@ -6,7 +6,7 @@ void setup() {
   anpPinSetup();                                      //anpPinSetup sets pins of anp (button-sonsing arduino) up
   uno = new Serial(this, "COM7", 9600);
   uno.bufferUntil('\n');
-  //audioSetup();                                        //audioSetup sets up routing for multiple streams of audio
+  audioSetup();                                        //audioSetup sets up routing for multiple streams of audio
 
 }
 
@@ -27,22 +27,22 @@ void serialEvent(Serial uno){                      //gets called when the buffer
 
   if (in != current){                            //if value of in has changed, do one of these things
     switch (in) {
-      /*case '1': 
+      case '1': 
         dirn = "front";
-        play("front");
+        play("front", centreMin);
         break;
       case '2': 
         dirn = "right";
-        play("right");
+        play("right", centreMin);
         break;
       case '3': 
         dirn = "back";
-        play("back");
+        play("back", centreMin);
         break;
       case '4': 
         dirn = "left";
-        play("left");
-        break;*/
+        play("left", centreMin);
+        break;
     }
     current = in;                                               //updating current variable
   }

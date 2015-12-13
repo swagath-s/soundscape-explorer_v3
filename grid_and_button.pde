@@ -46,8 +46,7 @@ void move(String where) {
     (where == "right" && now.x == 4) ||
     (where == "back" && now.y == 0) ||
     (where == "left" && now.x == 0)   )
-    //play("edge"); 
-    {}
+  play("edge", centreMin);
   else {
     switch (where) {
     case "front":
